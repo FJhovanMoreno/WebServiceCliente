@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://localhost:44393/MyProject/WebService1.asmx" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://localhost:44393/MyProject/WebService1.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://localhost:44393/MyProject/WebService1.asmx">
+      <s:element name="Suma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Numero1" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numero2" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SumaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SumaResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Resta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Numero1" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numero2" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RestaResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Division">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Numero1" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numero2" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivisionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DivisionResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Multiplicacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Numero1" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Numero2" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplicacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MultiplicacionResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="double" type="s:double" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SumaSoapIn">
+    <wsdl:part name="parameters" element="tns:Suma" />
+  </wsdl:message>
+  <wsdl:message name="SumaSoapOut">
+    <wsdl:part name="parameters" element="tns:SumaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestaSoapIn">
+    <wsdl:part name="parameters" element="tns:Resta" />
+  </wsdl:message>
+  <wsdl:message name="RestaSoapOut">
+    <wsdl:part name="parameters" element="tns:RestaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DivisionSoapIn">
+    <wsdl:part name="parameters" element="tns:Division" />
+  </wsdl:message>
+  <wsdl:message name="DivisionSoapOut">
+    <wsdl:part name="parameters" element="tns:DivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="MultiplicacionSoapIn">
+    <wsdl:part name="parameters" element="tns:Multiplicacion" />
+  </wsdl:message>
+  <wsdl:message name="MultiplicacionSoapOut">
+    <wsdl:part name="parameters" element="tns:MultiplicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SumaHttpGetIn">
+    <wsdl:part name="Numero1" type="s:string" />
+    <wsdl:part name="Numero2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SumaHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="RestaHttpGetIn">
+    <wsdl:part name="Numero1" type="s:string" />
+    <wsdl:part name="Numero2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RestaHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="DivisionHttpGetIn">
+    <wsdl:part name="Numero1" type="s:string" />
+    <wsdl:part name="Numero2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DivisionHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="MultiplicacionHttpGetIn">
+    <wsdl:part name="Numero1" type="s:string" />
+    <wsdl:part name="Numero2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MultiplicacionHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="SumaHttpPostIn">
+    <wsdl:part name="Numero1" type="s:string" />
+    <wsdl:part name="Numero2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SumaHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="RestaHttpPostIn">
+    <wsdl:part name="Numero1" type="s:string" />
+    <wsdl:part name="Numero2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RestaHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="DivisionHttpPostIn">
+    <wsdl:part name="Numero1" type="s:string" />
+    <wsdl:part name="Numero2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DivisionHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="MultiplicacionHttpPostIn">
+    <wsdl:part name="Numero1" type="s:string" />
+    <wsdl:part name="Numero2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MultiplicacionHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="Suma">
+      <wsdl:input message="tns:SumaSoapIn" />
+      <wsdl:output message="tns:SumaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Resta">
+      <wsdl:input message="tns:RestaSoapIn" />
+      <wsdl:output message="tns:RestaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <wsdl:input message="tns:DivisionSoapIn" />
+      <wsdl:output message="tns:DivisionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Multiplicacion">
+      <wsdl:input message="tns:MultiplicacionSoapIn" />
+      <wsdl:output message="tns:MultiplicacionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebService1HttpGet">
+    <wsdl:operation name="Suma">
+      <wsdl:input message="tns:SumaHttpGetIn" />
+      <wsdl:output message="tns:SumaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Resta">
+      <wsdl:input message="tns:RestaHttpGetIn" />
+      <wsdl:output message="tns:RestaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <wsdl:input message="tns:DivisionHttpGetIn" />
+      <wsdl:output message="tns:DivisionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Multiplicacion">
+      <wsdl:input message="tns:MultiplicacionHttpGetIn" />
+      <wsdl:output message="tns:MultiplicacionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebService1HttpPost">
+    <wsdl:operation name="Suma">
+      <wsdl:input message="tns:SumaHttpPostIn" />
+      <wsdl:output message="tns:SumaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Resta">
+      <wsdl:input message="tns:RestaHttpPostIn" />
+      <wsdl:output message="tns:RestaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <wsdl:input message="tns:DivisionHttpPostIn" />
+      <wsdl:output message="tns:DivisionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Multiplicacion">
+      <wsdl:input message="tns:MultiplicacionHttpPostIn" />
+      <wsdl:output message="tns:MultiplicacionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Suma">
+      <soap:operation soapAction="https://localhost:44393/MyProject/WebService1.asmx/Suma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Resta">
+      <soap:operation soapAction="https://localhost:44393/MyProject/WebService1.asmx/Resta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <soap:operation soapAction="https://localhost:44393/MyProject/WebService1.asmx/Division" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplicacion">
+      <soap:operation soapAction="https://localhost:44393/MyProject/WebService1.asmx/Multiplicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Suma">
+      <soap12:operation soapAction="https://localhost:44393/MyProject/WebService1.asmx/Suma" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Resta">
+      <soap12:operation soapAction="https://localhost:44393/MyProject/WebService1.asmx/Resta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <soap12:operation soapAction="https://localhost:44393/MyProject/WebService1.asmx/Division" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplicacion">
+      <soap12:operation soapAction="https://localhost:44393/MyProject/WebService1.asmx/Multiplicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1HttpGet" type="tns:WebService1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Suma">
+      <http:operation location="/Suma" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Resta">
+      <http:operation location="/Resta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <http:operation location="/Division" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplicacion">
+      <http:operation location="/Multiplicacion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1HttpPost" type="tns:WebService1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Suma">
+      <http:operation location="/Suma" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Resta">
+      <http:operation location="/Resta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <http:operation location="/Division" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplicacion">
+      <http:operation location="/Multiplicacion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44393/My%20Project/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44393/My%20Project/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1HttpGet" binding="tns:WebService1HttpGet">
+      <http:address location="https://localhost:44393/My%20Project/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1HttpPost" binding="tns:WebService1HttpPost">
+      <http:address location="https://localhost:44393/My%20Project/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
